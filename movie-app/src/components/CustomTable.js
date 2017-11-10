@@ -37,12 +37,13 @@ class CustomTable extends Component{
                 <table className="table table-bordered table-striped table-inverse">
                     <thead>
                          <tr>
-                            <th>id</th>
-                            <th>title</th>
-                            <th>release_date</th>
-                            <th>overview</th> 
-                            <th>popularity</th>
-                            <th>vote_count</th>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Release_date</th>
+                            <th>Overview</th> 
+                            <th>Rate</th>
+                            <th>Popularity</th>
+                            <th>Vote</th>
                             
                         </tr>
                     </thead>
@@ -54,6 +55,7 @@ class CustomTable extends Component{
                                  <td>{item.title}</td>
                                  <td>{item.release_date}</td>
                                  <td>{item.overview}</td>
+                                 <td>{item.vote_average}</td>
                                  <td>{item.popularity}</td>
                                  <td>{item.vote_count}</td>
                                  
