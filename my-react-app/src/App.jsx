@@ -28,8 +28,6 @@ class App extends React.Component{
              <br/> <br/>
              <Header headerProp={this.state.header}></Header>
              <Content contentProp={this.state.content}></Content>
-
-
             </div>
         );  
     }
