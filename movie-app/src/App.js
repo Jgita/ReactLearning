@@ -1,9 +1,10 @@
 
 import React from 'react'
 import headerImg from './images.jfif'
-import CustomTable from './components/CustomTable.js'
 import CustomButton from './components/CustomButton.js'
 import './App.css'
+import Routes from './Routes.js'
+
 
 class App extends React.Component{
     // constructor(props){
@@ -30,7 +31,7 @@ class App extends React.Component{
          </div>
         </div>
         </header>
-        <CustomTable></CustomTable>
+         <Routes></Routes>
         <footer>I am a footer</footer>
         </div>
     }
