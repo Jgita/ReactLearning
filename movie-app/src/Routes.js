@@ -9,20 +9,31 @@ import {
 import Home from './components/Home.js'
 import Login from './components/Login.js'
 import About from './components/About.js'
+import Register from './components/Register.js'
+import './App.css'
 
  class Routes extends Component {
+  
+constructor(props){
+  super(props);
+  3
+}
+
   render() {
     return <Router>
             <div>  
-               <ul>
-                  <li><Link to={'/'}>Home</Link></li>
-                   <li><Link to={'/About'}>About</Link></li>
-                  <li><Link to={'/Login'}>Login</Link></li>
+               <ul className="nav nav-tabs">
+               <li><Link activeclassname="active" to={'/Login'}>Login</Link></li>
+                <li><Link activeclassname="active" to={'/Register'}>Register</Link></li>
+               <li><Link activeclassname="active" to={'/Home'}>Dashbord</Link></li>
+               <li><Link activeclassname="active" to={'/About'}>About</Link></li>
+                  
                </ul>
                <Switch>
-                  <Route exact path='/' component={Home} />
+                  <Route exact path='/Home' component={Home} />
                   <Route exact path='/About' component={About} />
                   <Route exact path='/Login' component={Login} />
+                   <Route exact path='/Register' component={Register} />
                </Switch>
             </div>
          </Router>

@@ -1,7 +1,20 @@
 import React, {Component} from 'react';
 import axios from 'axios'
 import './CustomTable.css'
+import TextField from 'material-ui/TextField';
+import Toggle from 'material-ui/Toggle';
 // import CustomButton from './CustomButton';
+
+const styles = {
+  propContainer: {
+    width: 200,
+    overflow: 'hidden',
+    margin: '20px auto 0',
+  },
+  propToggleHeader: {
+    margin: '20px auto 10px',
+  },
+};
 
 class CustomTable extends Component{
     constructor(props){
@@ -19,7 +32,7 @@ class CustomTable extends Component{
         axios.get('https://api.themoviedb.org/3/movie/popular?api_key=5fa7c263ea0e33333004d3d6f77851bc')
         .then( (response) => {
             console.log('response',response.data.results)
-            this.setState({MoviesData : response.data.results || []})
+            this.setState({MoviesData : response.data.results})
 
         })
         .catch((error) => {
@@ -33,8 +46,8 @@ class CustomTable extends Component{
         return(
             <div>
 
-           
-                <table className="table table-bordered table-striped table-inverse">
+           <div className="table-responsive"> 
+                <table className="table table-bordered table-sm table-striped table-inverse table-condensed">
                     <thead>
                          <tr>
                             <th>Id</th>
@@ -65,7 +78,7 @@ class CustomTable extends Component{
                      
                         </tbody>
                     </table>   
-                  
+                  </div>
           </div>
         );
     }

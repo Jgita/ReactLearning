@@ -20,7 +20,7 @@ class App extends React.Component{
         return <div>
         <header className="App-header">
         <div className="row">
-        <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+        <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <img src={headerImg} className="App-logo" alt="logo"/>
         </div>
         <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5" style={{'paddingTop': '20px'}}>
@@ -31,8 +31,12 @@ class App extends React.Component{
          </div>
         </div>
         </header>
+         <div className="row">
+         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
          <Routes></Routes>
-        <footer>I am a footer</footer>
+         </div>
+         </div>
+      
         </div>
     }
 }
