@@ -5,9 +5,12 @@
   "dependencies": {
     "axios": "^0.17.0",
     "bootstrap": "^3.3.7",
+    "debounce": "^1.1.0",
+    "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
     "material-ui": "^0.19.4",
     "react": "^16.1.0",
+    "react-autosuggest": "^9.3.2",
     "react-dom": "^16.1.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
