@@ -7,18 +7,17 @@ import Login from './components/Login.js'
 
 
 class App extends React.Component {
-    // constructor(props){
-    //     super(props);
-    // }
-    // this.buttonLogin =>(){
-
-    // }
+    constructor(props){
+        super(props);
+    }
+    
     buttonLogin = () => {
         alert('Login...')
     }
     render() {
         return <div>
             <header className="App-header">
+            
                 <div className="row">
                     <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         <img src={headerImg} className="App-logo" alt="logo" />
@@ -31,6 +30,7 @@ class App extends React.Component {
                     </div>
                 </div>
             </header>
+           
             <div className="row">
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
                     <Routes></Routes>

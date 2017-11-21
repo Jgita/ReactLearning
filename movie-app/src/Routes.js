@@ -9,15 +9,13 @@ import './App.css'
 
 class Routes extends Component {
 
-  constructor(props) {
-    super(props);
-
-
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   disableLink = (e) => {
-    alert('Please Login First..')
-    e.preventDefault();
+    // alert('Please Login First..')
+    // e.preventDefault();
     console.log('e', e.target.name)
   }
 
@@ -41,7 +39,6 @@ class Routes extends Component {
           <li>
             <Link
               name="About"
-              onClick={this.disableLink}
               activeclassname="active"
               to={'/About'}>About</Link>
           </li>

@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
 // import CustomButton from './CustomButton';
 import _, {debounce} from 'lodash';
+import ReactTooltip from 'react-tooltip'
 
 const styles = {
     propContainer: {
@@ -20,13 +21,11 @@ const styles = {
 class CustomTable extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             MoviesData: [],
             inputValue: ''
         }
-
-        // var myEfficientFn = debounce(function() {     // All the taxing stuff you do
-        // }, 250);
 
         this.updatedMovies = debounce(function (inputValue) {
             axios
@@ -40,11 +39,8 @@ class CustomTable extends Component {
                     console.log(error);
                 });
         }, 1000);
-    }
-    componentWillMount() {
-        console.log('componentWillMount');
-    }
 
+    }
     onUpdate = (event) => {
         this.setState({inputValue: event.target.value});
         this.updatedMovies(event.target.value);
@@ -64,12 +60,12 @@ class CustomTable extends Component {
                 console.log(error);
             })
     }
-
+    getMovieDetail = () => {
+        alert("dfd");
+    }
     render() {
-
         return (
             <div className="content-area-inside">
-
                 <div className="row tabs-level1">
                     <div className="ui-selectee">
                         <nav className="column">
@@ -78,19 +74,17 @@ class CustomTable extends Component {
                             </ul>
                         </nav>
                     </div>
-                </div>
 
+                </div>
                 <div className="row">
                     <div className="row db-info shadow-btm"></div>
                 </div>
-
                 <div className="row content-wrapper">
                     <div className="col-xs-10 col-sm-9 col-md-10 col-lg-10 marginleft">
                         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-wrapper">
                             <div className="col-xs-5 col-sm-5 col-md-4 col-lg-5">
                                 <h1 className="title">Movies Details</h1>
                             </div>
-
                             <div className="col-xs-4 col-sm-4 col-md-5 col-lg-4 search-widget">
                                 <form className="navbar-form">
                                     <div className="form-group">
@@ -107,7 +101,6 @@ class CustomTable extends Component {
                                 </form>
                             </div>
                         </div>
-
                         <section className="margintop20 middle-wrapper">
 
                             <table className="example table  table-condensed cf">
@@ -120,7 +113,7 @@ class CustomTable extends Component {
                                         <th>Rate</th>
                                         <th>Popularity</th>
                                         <th>Vote</th>
-
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -128,7 +121,7 @@ class CustomTable extends Component {
                                         .state
                                         .MoviesData
                                         .map(function (item, i) {
-                                            return <tr  className="tickets-row" key={i}>
+                                            return <tr key={i}>
                                                 <td>{item.id}</td>
                                                 <td>{item.title}</td>
                                                 <td>{item.release_date}</td>
@@ -136,11 +129,17 @@ class CustomTable extends Component {
                                                 <td>{item.vote_average}</td>
                                                 <td>{item.popularity}</td>
                                                 <td>{item.vote_count}</td>
-
+                                                <td>
+                                                    <button
+                                                        className="btn btn-info"
+                                                        type="button"
+                                                        value={item.id}
+                                                        >
+                                                        Details</button>
+                                                </td>
                                             </tr>
                                         })
-}
-
+                                     }
                                 </tbody>
                             </table>
                         </section>
