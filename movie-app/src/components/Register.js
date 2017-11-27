@@ -44,12 +44,12 @@ class Register extends Component {
             <div className="col-xs-5 col-sm-4 col-md-5 col-lg-5 loginleft">
               <section className="margintop20 middle-wrapper">
                 <MuiThemeProvider>
-                  
-                      <AppBar title="Register"/>
+               
                       <div
                         style={{
                         'textAlign': 'center'
                       }}>
+                       <AppBar title="Register"/>
                         <form id='create-course-form'>
                           <TextField
                             hintText="Enter Your First Name"
@@ -88,9 +88,6 @@ class Register extends Component {
                           style={style}
                           onClick={this.handleClick}/>
                       </div>
-                   
-                   
-
                 </MuiThemeProvider>
               </section>
             </div>

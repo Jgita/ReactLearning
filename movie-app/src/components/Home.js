@@ -17,7 +17,7 @@ class Home extends Component {
         }
         setTimeout(() => {
             this.setState({loader: false});
-        }, 1000);
+        }, 600);
     }
 
     render() {
@@ -27,7 +27,6 @@ class Home extends Component {
                 <Loader transitionConfig={transitionConfig} show={this.state.loader} message={spinner}>
                     <CustomTable></CustomTable>
                 </Loader>
-
             </div>
         );
     }

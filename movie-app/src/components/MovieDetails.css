@@ -1,0 +1,67 @@
+.details-title{
+    color: #e48c11;
+    display: inline;
+    font-size: 44px;
+    margin: 0;
+}
+
+.paddingright {
+    padding-right: 10px!important;
+    
+}
+
+.barpaddingtop {
+    padding-top: 10px;
+    padding-left: 10px !important;
+}
+
+.cardbox-header {
+    background-color: #fbfbfb;
+    border-bottom: 2px solid #d1dae3;
+    font-size: 16px;
+    padding: 10px;
+}
+
+
+.cardbox-header a:link {
+    color: #252422;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.cardbox-header a:hover {
+    color: #252422;
+}
+
+.cardbox-header a:visited {
+    color: #252422;
+}
+
+.cardbox-header .btn:hover,
+.btn:focus {
+    color: #fff !important;
+    text-decoration: none;
+    background: none;
+}
+
+.cardbox-header .dropdown,
+.dropup {
+    list-style: outside none none;
+    position: relative;
+    float: right;
+}
+
+.Dashwrap {
+    padding: 15px 18px;
+}
+
+.paddingtopbar {
+    padding-top: 13px;
+}
+
+.fontStyle{
+    font-weight: 600;
+    line-height: 1.3em;
+    font-size: 1.3em;
+
+}

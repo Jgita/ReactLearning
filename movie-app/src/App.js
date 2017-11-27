@@ -24,10 +24,7 @@ class App extends React.Component {
                     </div>
                     <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5" style={{ 'paddingTop': '20px' }}>
                         <h1>MovieDB</h1>
-                    </div>
-                    <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <CustomButton name="Login" buttonClick={this.buttonLogin} />
-                    </div>
+                    </div> 
                 </div>
             </header>
            

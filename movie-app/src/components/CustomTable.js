@@ -3,9 +3,9 @@ import axios from 'axios'
 import './CustomTable.css'
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
-// import CustomButton from './CustomButton';
 import _, {debounce} from 'lodash';
 import ReactTooltip from 'react-tooltip'
+import {withRouter} from "react-router-dom";
 
 const styles = {
     propContainer: {
@@ -21,7 +21,7 @@ const styles = {
 class CustomTable extends Component {
     constructor(props) {
         super(props);
-
+        localStorage.removeItem("movieid");
         this.state = {
             MoviesData: [],
             inputValue: ''
@@ -38,7 +38,7 @@ class CustomTable extends Component {
                 .catch((error) => {
                     console.log(error);
                 });
-        }, 1000);
+        }, 500);
 
     }
     onUpdate = (event) => {
@@ -60,9 +60,19 @@ class CustomTable extends Component {
                 console.log(error);
             })
     }
-    getMovieDetail = () => {
-        alert("dfd");
+
+    getmoviedetail = (event) => {
+        let movieId = event.target.value;
+        console.log('movieId', movieId)
+        localStorage.setItem("movieid", movieId);
+        this
+            .props
+            .history
+            .push({pathname: '/MoviesDetails', movieid: movieId})
+
+        console.log(movieId);
     }
+
     render() {
         return (
             <div className="content-area-inside">
@@ -102,12 +112,12 @@ class CustomTable extends Component {
                             </div>
                         </div>
                         <section className="margintop20 middle-wrapper">
-
                             <table className="example table  table-condensed cf">
                                 <thead className="cf">
                                     <tr>
                                         <th>Id</th>
                                         <th>Title</th>
+                                        <th>Poster</th>
                                         <th>Release_date</th>
                                         <th>Overview</th>
                                         <th>Rate</th>
@@ -120,26 +130,33 @@ class CustomTable extends Component {
                                     {this
                                         .state
                                         .MoviesData
-                                        .map(function (item, i) {
-                                            return <tr key={i}>
-                                                <td>{item.id}</td>
-                                                <td>{item.title}</td>
-                                                <td>{item.release_date}</td>
-                                                <td>{item.overview}</td>
-                                                <td>{item.vote_average}</td>
-                                                <td>{item.popularity}</td>
-                                                <td>{item.vote_count}</td>
-                                                <td>
+                                        .map((item, i) => <tr key={i}>
+                                            <td>{item.id}</td>
+                                            <td>{item.title}</td>
+                                            <td>
+                                                <img
+                                                    alt="Not Found"
+                                                    src={"http://image.tmdb.org/t/p/w185/" + item.poster_path}
+                                                    width='80px'
+                                                    height="110px"/>
+                                            </td>
+                                            <td>{item.release_date}</td>
+                                            <td>{item.overview}</td>
+                                            <td>{item.vote_average}</td>
+                                            <td>{item.popularity}</td>
+                                            <td>{item.vote_count}</td>
+                                            <td>
+                                                <div className="action-bar">
                                                     <button
-                                                        className="btn btn-info"
+                                                        className="btn btn-warning"
                                                         type="button"
                                                         value={item.id}
-                                                        >
-                                                        Details</button>
-                                                </td>
-                                            </tr>
-                                        })
-                                     }
+                                                        onClick={this.getmoviedetail}>
+                                                        More Info</button>
+                                                </div>
+                                            </td>
+                                        </tr>)
+}
                                 </tbody>
                             </table>
                         </section>
@@ -150,4 +167,4 @@ class CustomTable extends Component {
     }
 }
 
-export default CustomTable;
+export default withRouter(CustomTable);

@@ -15,9 +15,7 @@ class Login extends Component {
             password: ''
         }
     }
-    //  updateUser = (e) => {          console.log('e',e.target.value)
-    // this.setState({data: e.target.value});      }
-
+   
     updateUser = (event, newValue) => {
         // console.log(newValue)
         this.setState({username: newValue})
@@ -35,16 +33,6 @@ class Login extends Component {
             'password': this.state.password
         }
         this.props.history.push("/Home");
-
-        // if (this.state.username === 'admin' && this.state.password === 'admin') {
-        //     this
-        //         .props
-        //         .history
-        //         .push("/Home");
-
-        // } else {
-        //     alert('Please Enter Correct Username and Password...');
-        // }
     }
 
     handelRegister = (event) => {
@@ -62,10 +50,6 @@ class Login extends Component {
 
         return (
             <div>
-                {/*<h1>Login</h1>
-            <label>Enter User Name:&nbsp;&nbsp;&nbsp;</label>
-            <input type="text" value = {this.state.data}  onChange = {this.updateUser}/>
-            <h1>{this.state.data}</h1>*/}
                 <div className="content-area-inside">
                     <div className="row">
                         <div className="row db-info shadow-btm"></div>
@@ -74,12 +58,11 @@ class Login extends Component {
                         <div className="col-xs-5 col-sm-4 col-md-5 col-lg-5 loginleft">
                             <section className="margintop20 middle-wrapper">
                                 <MuiThemeProvider>
-                                    <AppBar title="Login"/>
-                                    <div
+                                <div
                                         style={{
                                         'textAlign': 'center'
                                     }}>
-
+                                    <AppBar title="Login"/>
                                         <TextField
                                             hintText="Enter your Username"
                                             floatingLabelText="Username"
