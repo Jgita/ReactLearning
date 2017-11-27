@@ -9,11 +9,17 @@ import MoviesDetails from './components/MoviesDetails.js'
 import './App.css'
 
 class Routes extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      payload: localStorage.getItem('movieid')
+    }
+     console.log('payload',this.state.payload)
+  }
 
   disableLink = (e) => {
-    // alert('Please Login First..')
-    // e.preventDefault();
-    console.log('e', e.target.name)
+    alert('Please Login First..')
+    e.preventDefault();
   }
 
   render() {

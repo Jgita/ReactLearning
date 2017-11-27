@@ -71,6 +71,7 @@ class CustomTable extends Component {
             .push({pathname: '/MoviesDetails', movieid: movieId})
 
         console.log(movieId);
+       
     }
 
     render() {
